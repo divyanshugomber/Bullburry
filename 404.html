@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('bullburry_theme');
+      if (saved) { document.documentElement.setAttribute('data-theme', saved); }
+      else { document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — BULLBURRY</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body style="cursor: auto;">
+  <div class="error-page container">
+    <div class="error-code">404</div>
+    <h1 class="text-display" style="font-size: var(--text-3xl);">BULL IN A CHINA SHOP</h1>
+    <p class="text-ash" style="max-width: 50ch;">
+      Looks like you smashed straight through a wall that doesn't exist. Let's redirect that momentum back to the collection.
+    </p>
+    <a href="index.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Return to Atelier</a>
+  </div>
+</body>
+</html>

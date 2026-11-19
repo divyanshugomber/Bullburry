@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('bullburry_theme');
+      if (saved) { document.documentElement.setAttribute('data-theme', saved); }
+      else { document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product Details — BULLBURRY. Built Bold. Premium streetwear crafted with tailoring precision.">
+  <title>Product — BULLBURRY</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="promo-banner" aria-label="Promotional message">
+    Free shipping on orders over $200 &nbsp;·&nbsp; New Drop 02 Coming Soon
+  </div>
+
+  <div id="header-placeholder"></div>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <main class="product-page">
+    <div class="container">
+      <nav class="product-breadcrumb" aria-label="Breadcrumb" style="margin-bottom: var(--space-6);">
+        <a href="index.html">Home</a>
+        <span class="product-breadcrumb-sep">/</span>
+        <a href="shop.html">Shop</a>
+        <span class="product-breadcrumb-sep">/</span>
+        <span id="breadcrumb-current" class="text-bone">Product</span>
+      </nav>
+
+      <div class="product-layout">
+        <!-- Gallery -->
+        <div class="product-gallery">
+          <div class="gallery-main" id="gallery-zoom-target">
+            <img id="gallery-main-img" src="assets/images/placeholder.jpg" alt="Product Image">
+          </div>
+          <div class="gallery-thumbs" role="group" aria-label="Product thumbnails"></div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info">
+          <div>
+            <span class="product-tag-badge" id="product-tag" style="display:none;">New</span>
+            <h1 class="product-name" id="product-name">Loading Product...</h1>
+          </div>
+          
+          <div class="product-price-block">
+            <span class="product-price" id="product-price">$0</span>
+            <span class="text-ash" style="font-size: var(--text-xs);">Tax included. Shipping calculated at checkout.</span>
+          </div>
+
+          <div class="swatch-group">
+            <span class="swatch-label">Color: <span id="selected-color-name" class="text-bone">Default</span></span>
+            <div class="swatch-row"></div>
+          </div>
+
+          <div class="size-group">
+            <div class="size-label-row">
+              <span class="swatch-label">Select Size</span>
+              <button class="size-guide-link" id="size-guide-btn" type="button">Size Guide</button>
+            </div>
+            <div class="size-row"></div>
+          </div>
+
+          <div class="atc-row">
+            <button class="btn btn-primary btn-lg" id="atc-btn" type="button">Add to Bag</button>
+            <button class="wishlist-btn-lg" id="product-wishlist-btn" type="button" aria-label="Wishlist">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Accordions -->
+          <div class="accordion-group" style="margin-top: var(--space-4);">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="true">
+                <span>Description &amp; Fit</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body open">
+                <div class="accordion-content" id="product-description">Heavyweight custom cut. Built bold.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Fabric &amp; Details</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-content" id="product-details">100% Cotton. Pre-shrunk with heritage tailoring.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Care Instructions</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-content" id="product-care">Machine wash cold. Hang dry inside out.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Shipping &amp; Free Returns</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-content">
+                  Free express shipping on domestic orders over $200. Hassle-free returns within 14 days of delivery.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complete The Fit -->
+      <section class="complete-fit">
+        <h2 class="complete-fit-title">Complete The Fit</h2>
+        <div class="products-grid" id="complete-fit-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-overlay" id="size-guide-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-box" style="grid-template-columns: 1fr; max-width: 650px; padding: var(--space-8);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: var(--space-6);">
+        <h3 class="text-display" style="font-size: var(--text-2xl);">Size Guide (Inches)</h3>
+        <button class="modal-close" id="size-guide-close" aria-label="Close size guide">&times;</button>
+      </div>
+      <table class="size-guide-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest</th>
+            <th>Length</th>
+            <th>Shoulder</th>
+            <th>Sleeve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>38 - 40</td><td>27.5</td><td>19.0</td><td>8.5</td></tr>
+          <tr><td>S</td><td>40 - 42</td><td>28.5</td><td>20.0</td><td>9.0</td></tr>
+          <tr><td>M</td><td>42 - 44</td><td>29.5</td><td>21.0</td><td>9.5</td></tr>
+          <tr><td>L</td><td>44 - 46</td><td>30.5</td><td>22.0</td><td>10.0</td></tr>
+          <tr><td>XL</td><td>46 - 48</td><td>31.5</td><td>23.0</td><td>10.5</td></tr>
+          <tr><td>XXL</td><td>48 - 50</td><td>32.5</td><td>24.0</td><td>11.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping Cart" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Your Bag</h2>
+      <button class="nav-icon-btn" id="cart-drawer-close" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="shipping-progress">
+        <div class="shipping-progress-bar">
+          <div class="shipping-progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+        <span class="shipping-progress-label" id="shipping-progress-label">Spend $200 more for free express shipping.</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="amount" id="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-full">Checkout</a>
+    </div>
+  </div>
+
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('bullburry_theme');
+      if (saved) { document.documentElement.setAttribute('data-theme', saved); }
+      else { document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lookbook — BULLBURRY Drop 02. High contrast, urban silhouettes, tailoring discipline.">
+  <title>Lookbook — BULLBURRY</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="promo-banner" aria-label="Promotional message">
+    Free shipping on orders over $200 &nbsp;·&nbsp; New Drop 02 Coming Soon
+  </div>
+
+  <div id="header-placeholder"></div>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <main>
+    <section class="lookbook-hero">
+      <div class="lookbook-hero-bg">
+        <img src="assets/images/hero-banner.jpg" alt="Lookbook Editorial Background">
+      </div>
+      <div class="lookbook-hero-content container">
+        <span class="section-eyebrow">DROP 02 // ARCHIVE</span>
+        <h1 class="text-display" style="font-size: var(--text-4xl); margin-top: var(--space-2);">THE DISCIPLINE OF BOLD</h1>
+        <p class="text-ash" style="margin-top: var(--space-4); max-width: 50ch;">
+          Shot on 35mm film across industrial landscapes. Heritage tailoring colliding with modern streetwear momentum.
+        </p>
+      </div>
+    </section>
+
+    <!-- Full-bleed editorial grid -->
+    <div class="container" style="padding-block: var(--space-12);">
+      <div class="lookbook-grid">
+        <div class="lookbook-item revealed">
+          <img src="assets/images/lookbook-1.jpg" alt="Lookbook Shot 1" loading="lazy">
+        </div>
+        <div class="lookbook-item revealed">
+          <img src="assets/images/lookbook-2.jpg" alt="Lookbook Shot 2" loading="lazy">
+        </div>
+        <div class="lookbook-item revealed">
+          <img src="assets/images/lookbook-3.jpg" alt="Lookbook Shot 3" loading="lazy">
+        </div>
+        <div class="lookbook-item revealed">
+          <img src="assets/images/lookbook-4.jpg" alt="Lookbook Shot 4" loading="lazy">
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-16);">
+        <h2 class="text-display" style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">WEAR THE STATEMENT</h2>
+        <a href="shop.html" class="btn btn-primary btn-lg">Shop The Drop</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping Cart" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Your Bag</h2>
+      <button class="nav-icon-btn" id="cart-drawer-close" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="shipping-progress">
+        <div class="shipping-progress-bar">
+          <div class="shipping-progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+        <span class="shipping-progress-label" id="shipping-progress-label">Spend $200 more for free express shipping.</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="amount" id="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-full">Checkout</a>
+    </div>
+  </div>
+
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

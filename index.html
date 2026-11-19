@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* Prevent flash of wrong theme */
+    (function() {
+      var saved = localStorage.getItem('bullburry_theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else {
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BULLBURRY — Elevated streetwear for those who charge the field. Shop the latest drops in outerwear, tops, bottoms and accessories.">
+  <meta property="og:title" content="BULLBURRY — Elevated Streetwear">
+  <meta property="og:description" content="Elevated streetwear for those who charge the field.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bullburry.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>BULLBURRY — Elevated Streetwear</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Promo Banner -->
+  <div class="promo-banner" role="banner" aria-label="Promotional message">
+    Free shipping on orders over $200 &nbsp;·&nbsp; New Drop 02 Coming Soon
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" role="status" aria-label="Loading Bullburry">
+    <svg class="loader-horn" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M10 70 Q 30 20, 60 30 Q 90 40, 110 10" stroke="hsl(40,20%,94%)" stroke-linecap="round"/>
+      <path d="M60 30 Q 65 35, 70 50" stroke="hsl(345,70%,38%)" stroke-linecap="round"/>
+    </svg>
+    <div class="loader-wordmark">BULLBURRY</div>
+    <div class="loader-curtain"></div>
+  </div>
+
+  <!-- Nav placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg">
+      <img src="assets/images/hero-bg.jpg" alt="Model wearing Bullburry Obsidian Utility Jacket against urban backdrop" loading="eager">
+    </div>
+    <div class="hero-content">
+      <p class="hero-tagline">Drop 01 — Now Available</p>
+      <h1 class="hero-headline">
+        <span class="word">
+          <span class="letter">C</span><span class="letter">H</span><span class="letter">A</span><span class="letter">R</span><span class="letter">G</span><span class="letter">E</span>
+        </span>
+        <span class="word">
+          <span class="letter">T</span><span class="letter">H</span><span class="letter">E</span>
+        </span>
+        <span class="word">
+          <span class="letter">F</span><span class="letter">I</span><span class="letter">E</span><span class="letter">L</span><span class="letter">D</span>
+        </span>
+      </h1>
+      <a href="shop.html" class="hero-cta" aria-label="Shop the new collection">
+        <span>Shop the Drop</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">NEW DROP 01 <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">FREE SHIPPING OVER $200 <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">ELEVATED STREETWEAR <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">CHARGE THE FIELD <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">BULLBURRY <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">DEADSTOCK FABRICS <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">NEW DROP 01 <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">FREE SHIPPING OVER $200 <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">ELEVATED STREETWEAR <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">CHARGE THE FIELD <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">BULLBURRY <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">DEADSTOCK FABRICS <span class="marquee-sep">✦</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ NEW ARRIVALS ═══ -->
+  <section class="section" aria-labelledby="new-arrivals-heading">
+    <div class="container">
+      <div class="flex justify-between items-center" style="margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);">
+        <div>
+          <p class="section-label">Drop 01</p>
+          <h2 id="new-arrivals-heading" class="section-title">New Arrivals</h2>
+        </div>
+        <a href="shop.html" class="btn btn-outline">View All</a>
+      </div>
+      <div class="products-grid" id="new-arrivals-grid" aria-label="New arrivals product grid">
+        <!-- Rendered by main.js -->
+        <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line w-50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line w-50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line w-50"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COUNTDOWN ═══ -->
+  <section class="countdown-section" id="countdown" aria-labelledby="countdown-heading">
+    <div class="container" style="position:relative; z-index:1;">
+      <p class="countdown-label">Coming Soon</p>
+      <h2 id="countdown-heading" class="countdown-title">Drop 02 Drops In</h2>
+      <div class="countdown-timer" aria-live="polite" aria-label="Countdown timer">
+        <div class="countdown-unit">
+          <span class="countdown-num" data-countdown="days">00</span>
+          <span class="countdown-unit-label">Days</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-num" data-countdown="hours">00</span>
+          <span class="countdown-unit-label">Hours</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-num" data-countdown="minutes">00</span>
+          <span class="countdown-unit-label">Minutes</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-num" data-countdown="seconds">00</span>
+          <span class="countdown-unit-label">Seconds</span>
+        </div>
+      </div>
+      <form class="countdown-notify" aria-label="Notify me when drop launches">
+        <input type="email" class="notify-input" placeholder="Enter your email" aria-label="Email for drop notification" required>
+        <button type="submit" class="btn btn-primary">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ LOOKBOOK ═══ -->
+  <section class="section" aria-labelledby="lookbook-heading">
+    <div class="container" style="margin-bottom: var(--space-8); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: var(--space-4);">
+      <div>
+        <p class="section-label">Editorial</p>
+        <h2 id="lookbook-heading" class="section-title">Lookbook</h2>
+      </div>
+      <a href="lookbook.html" class="btn btn-outline">View All</a>
+    </div>
+    <div class="lookbook-scroll" role="region" aria-label="Lookbook scroll gallery">
+      <div class="lookbook-scroll-item">
+        <img src="assets/images/look-01.jpg" alt="Look 1: Obsidian Utility Jacket with cargo trousers" loading="lazy"
+          onerror="this.style.background='hsl(240,3%,18%)'">
+      </div>
+      <div class="lookbook-scroll-item">
+        <img src="assets/images/look-02.jpg" alt="Look 2: Horn Graphic Tee styled with wide leg denim" loading="lazy"
+          onerror="this.style.background='hsl(240,3%,18%)'">
+      </div>
+      <div class="lookbook-scroll-item">
+        <img src="assets/images/look-03.jpg" alt="Look 3: Tactical vest layered over hoodie" loading="lazy"
+          onerror="this.style.background='hsl(240,3%,18%)'">
+      </div>
+      <div class="lookbook-scroll-item">
+        <img src="assets/images/look-04.jpg" alt="Look 4: Full Bullburry outerwear outfit" loading="lazy"
+          onerror="this.style.background='hsl(240,3%,18%)'">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT TEASER ═══ -->
+  <section class="section section--bone reveal-on-scroll" aria-labelledby="about-teaser-heading">
+    <div class="container">
+      <div style="max-width: 700px; margin-inline: auto; text-align: center;">
+        <p class="section-label" style="color: var(--color-bull-berry);">Our Story</p>
+        <h2 id="about-teaser-heading" class="section-title" style="margin-bottom: var(--space-6);">Built for the relentless</h2>
+        <p style="font-size: var(--text-lg); line-height: 1.7; margin-inline: auto; margin-bottom: var(--space-8);">
+          Bullburry was born in a warehouse at the edge of the city.
+          We build clothes that last — from deadstock materials, with intention.
+          No seasonal waste. No trend chasing. Just pieces worth wearing.
+        </p>
+        <a href="about.html" class="btn btn-primary btn-lg">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER PLACEHOLDER ═══ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ═══ TOAST CONTAINER ═══ -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ═══ CART DRAWER ═══ -->
+  <div class="cart-drawer" role="dialog" aria-label="Shopping cart" aria-modal="true">
+    <div class="cart-drawer-header">
+      <span class="cart-drawer-title">Your Cart</span>
+      <button class="modal-close" aria-label="Close cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body">
+      <!-- Rendered by cart.js -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="shipping-progress">
+        <div class="shipping-progress-bar"><div class="shipping-progress-fill" style="width:0%"></div></div>
+        <span class="shipping-progress-label">Add $200 for free shipping</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="amount">$0.00</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-full" data-drawer-checkout>Checkout</a>
+      <a href="shop.html" class="btn btn-ghost btn-full">Continue Shopping</a>
+    </div>
+  </div>
+  <div class="cart-overlay"></div>
+
+  <!-- ═══ QUICK VIEW MODAL ═══ -->
+  <div class="modal-overlay" id="quick-view-modal" role="dialog" aria-label="Quick product view" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-gallery"></div>
+      <div class="modal-content">
+        <!-- Rendered by ui.js -->
+      </div>
+      <button class="modal-close" aria-label="Close quick view">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

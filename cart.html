@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('bullburry_theme');
+      if (saved) { document.documentElement.setAttribute('data-theme', saved); }
+      else { document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Cart &amp; Checkout — BULLBURRY. Complete your order with secure checkout and express shipping.">
+  <title>Shopping Bag — BULLBURRY</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="promo-banner" aria-label="Promotional message">
+    Free shipping on orders over $200 &nbsp;·&nbsp; New Drop 02 Coming Soon
+  </div>
+
+  <div id="header-placeholder"></div>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <main class="cart-page">
+    <div class="container">
+      <h1 class="cart-page-title">SHOPPING BAG</h1>
+
+      <div class="cart-page-layout">
+        <!-- Items column -->
+        <div>
+          <div id="cart-page-items"></div>
+        </div>
+
+        <!-- Checkout summary column -->
+        <div>
+          <div class="order-summary">
+            <h2 class="order-summary-title">ORDER SUMMARY</h2>
+            
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="cart-page-subtotal">$0</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="cart-page-shipping">Calculated next</span>
+            </div>
+            <div class="summary-row">
+              <span>Estimated Tax</span>
+              <span>$0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span class="amount" id="cart-page-total">$0</span>
+            </div>
+
+            <!-- Mock Checkout Form -->
+            <form class="checkout-form" id="checkout-form" novalidate style="margin-top: var(--space-4);">
+              <h3 class="text-display" style="font-size: var(--text-md); margin-bottom: var(--space-2);">EXPRESS CHECKOUT</h3>
+              <div class="form-group">
+                <label class="form-label" for="checkout-email">Email Address</label>
+                <input class="form-input" type="email" id="checkout-email" required placeholder="alex@domain.com">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="checkout-fn">First Name</label>
+                  <input class="form-input" type="text" id="checkout-fn" required placeholder="Alex">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-ln">Last Name</label>
+                  <input class="form-input" type="text" id="checkout-ln" required placeholder="Mercer">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-addr">Delivery Address</label>
+                <input class="form-input" type="text" id="checkout-addr" required placeholder="42 Urban Way, Apt 3B">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="checkout-city">City</label>
+                  <input class="form-input" type="text" id="checkout-city" required placeholder="New York">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-zip">Postal Code</label>
+                  <input class="form-input" type="text" id="checkout-zip" required placeholder="10001">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top: var(--space-4);">
+                Authorize &amp; Place Order
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Success State -->
+      <div class="order-success" style="display:none;">
+        <div class="success-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#F0EDE7" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h2 class="text-display" style="font-size: var(--text-3xl);">ORDER CONFIRMED</h2>
+        <p class="text-ash" style="max-width: 45ch; text-align: center;">
+          Thank you for joining the vanguard. Your order #BB-90823 has been logged into our atelier dispatch. A confirmation email has been sent to your address.
+        </p>
+        <a href="shop.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping Cart" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Your Bag</h2>
+      <button class="nav-icon-btn" id="cart-drawer-close" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="shipping-progress">
+        <div class="shipping-progress-bar">
+          <div class="shipping-progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+        <span class="shipping-progress-label" id="shipping-progress-label">Spend $200 more for free express shipping.</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="amount" id="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-full">Checkout</a>
+    </div>
+  </div>
+
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

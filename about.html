@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('bullburry_theme');
+      if (saved) { document.documentElement.setAttribute('data-theme', saved); }
+      else { document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About BULLBURRY — Built Bold. We blend the raw momentum of the bull with rich berry hues and traditional heritage tailoring.">
+  <title>About Us — BULLBURRY</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="promo-banner" aria-label="Promotional message">
+    Free shipping on orders over $200 &nbsp;·&nbsp; New Drop 02 Coming Soon
+  </div>
+
+  <div id="header-placeholder"></div>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <main>
+    <section class="about-hero container">
+      <div class="about-content">
+        <span class="section-eyebrow">OUR MANIFESTO</span>
+        <h1 class="text-display" style="font-size: var(--text-4xl); margin-top: var(--space-3); line-height: 0.95;">
+          POWER. STUBBORNNESS.<br><span class="text-accent">BUILT BOLD.</span>
+        </h1>
+        <p class="about-desc">
+          Bullburry was born from dissatisfaction with disposable streetwear. We take oversized, dropped-shoulder silhouettes and construct them with the discipline of bespoke Savile Row tailoring.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="about-image-block">
+        <img src="assets/images/about-hero.jpg" alt="Bullburry Atelier Workshop" loading="lazy">
+      </div>
+
+      <!-- Values Grid -->
+      <section style="padding-bottom: var(--space-24);">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">CORE PRINCIPLES</span>
+            <h2 class="section-title">THE BULLBURRY STANDARD</h2>
+          </div>
+        </div>
+
+        <div class="about-values">
+          <div class="value-card">
+            <div class="value-num">01</div>
+            <h3 class="value-title">HEAVYWEIGHT FABRICS</h3>
+            <p class="value-desc">Custom 280-450gsm deadstock textiles, pre-shrunk cotton jerseys, and Japanese selvedge denim built to withstand daily wear.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-num">02</div>
+            <h3 class="value-title">PRECISE TAILORING</h3>
+            <p class="value-desc">Triple-needle chainstitching, bound internal seams, and reinforced stress points ensure longevity over seasons.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-num">03</div>
+            <h3 class="value-title">LIMITED DROPS</h3>
+            <p class="value-desc">Small batch capsule releases. Zero inventory landfills. Once a collection sells out, it enters the permanent archive.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-num">04</div>
+            <h3 class="value-title">BULL BERRY IDENTITY</h3>
+            <p class="value-desc">Our signature deep crimson-plum accent pigment represents stubborn momentum and raw refinement.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping Cart" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Your Bag</h2>
+      <button class="nav-icon-btn" id="cart-drawer-close" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="shipping-progress">
+        <div class="shipping-progress-bar">
+          <div class="shipping-progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+        <span class="shipping-progress-label" id="shipping-progress-label">Spend $200 more for free express shipping.</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="amount" id="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-full">Checkout</a>
+    </div>
+  </div>
+
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
